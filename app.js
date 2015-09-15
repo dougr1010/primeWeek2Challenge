@@ -16,9 +16,10 @@ $("form").submit(function(event){
 	// employee.salary =     $("#salary").val();
 
 	var employee = {};
-	var $inputs = $("input");
+	var $inputs = $(".inputForm input"); //this also selects the button as last element
 	$inputs.each(function(){
 	employee[this.name]= $(this).val();
+	$(this).val("");  //data is stored, now clear input field
 	});
 console.log($("input"));
 //console.log(employee);
@@ -50,8 +51,6 @@ console.log($("input"));
 //console.log($appendData);
 	$("ul").append($appendData);
 
-	//clear the input fields
-	$inputs.find("firstName").val("");
 });
 
 $(document).on('click',".removeBtn",function(event){
